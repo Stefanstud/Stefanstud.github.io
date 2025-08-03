@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Academic Design System - LaTeX inspired with modern touches
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Academic Base Colors */
+    --background: 0 0% 99%;
+    --foreground: 220 15% 15%;
+    --paper: 0 0% 100%;
+
+    /* Academic Blue Palette */
+    --academic-blue: 214 100% 30%;
+    --academic-blue-light: 214 100% 85%;
+    --academic-blue-dark: 214 100% 20%;
+
+    /* Accent Colors for Visual Elements */
+    --accent-orange: 25 95% 60%;
+    --accent-green: 145 65% 45%;
+    --accent-purple: 260 75% 55%;
+    --accent-red: 0 75% 55%;
+
+    /* Card and Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+    --card-shadow: 220 15% 15% / 0.08;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+
+    /* Primary Academic Theme */
+    --primary: 214 100% 30%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 214 100% 92%;
+
+    /* Secondary Academic Gray */
+    --secondary: 220 10% 96%;
+    --secondary-foreground: 220 15% 25%;
+
+    /* Muted Text Colors */
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Accent for Highlights */
+    --accent: 214 100% 92%;
+    --accent-foreground: 214 100% 25%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border and Input */
+    --border: 220 15% 88%;
+    --input: 220 15% 92%;
+    --ring: 214 100% 30%;
+
+    --radius: 0.375rem;
+
+    /* Academic Gradients */
+    --gradient-academic: linear-gradient(135deg, hsl(var(--academic-blue)), hsl(var(--academic-blue-dark)));
+    --gradient-paper: linear-gradient(180deg, hsl(var(--paper)), hsl(var(--background)));
+    --gradient-subtle: linear-gradient(135deg, hsl(var(--accent-orange) / 0.1), hsl(var(--accent-green) / 0.1));
+
+    /* Academic Shadows */
+    --shadow-paper: 0 4px 20px -2px hsl(var(--card-shadow));
+    --shadow-elegant: 0 8px 30px -8px hsl(var(--card-shadow));
+    --shadow-collaboration: 0 2px 8px -2px hsl(var(--academic-blue) / 0.2);
+
+    /* Transitions */
+    --transition-academic: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.2s ease-in-out;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Academic Base Colors - Dark Mode */
+    --background: 220 15% 8%;
+    --foreground: 0 0% 95%;
+    --paper: 220 15% 10%;
+
+    /* Academic Blue Palette - Dark Mode */
+    --academic-blue: 214 100% 60%;
+    --academic-blue-light: 214 100% 20%;
+    --academic-blue-dark: 214 100% 80%;
+
+    /* Accent Colors for Visual Elements - Dark Mode */
+    --accent-orange: 25 95% 65%;
+    --accent-green: 145 65% 55%;
+    --accent-purple: 260 75% 65%;
+    --accent-red: 0 75% 65%;
+
+    /* Card and Surface Colors - Dark Mode */
+    --card: 220 15% 10%;
+    --card-foreground: 0 0% 95%;
+    --card-shadow: 0 0% 0% / 0.3;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Primary Academic Theme - Dark Mode */
+    --primary: 214 100% 60%;
+    --primary-foreground: 220 15% 8%;
+    --primary-light: 214 100% 15%;
+
+    /* Secondary Academic Gray - Dark Mode */
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 0 0% 85%;
+
+    /* Muted Text Colors - Dark Mode */
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 65%;
+
+    /* Accent for Highlights - Dark Mode */
+    --accent: 214 100% 15%;
+    --accent-foreground: 214 100% 85%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Border and Input - Dark Mode */
+    --border: 220 15% 20%;
+    --input: 220 15% 18%;
+    --ring: 214 100% 60%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Crimson Text', 'Computer Modern Serif', serif;
+    line-height: 1.6;
+    font-feature-settings: "liga" 1, "kern" 1;
+  }
+
+  /* Academic Typography Classes */
+  .font-academic {
+    font-family: 'Crimson Text', 'Computer Modern Serif', serif;
+  }
+
+  .font-academic-mono {
+    font-family: 'Source Code Pro', 'Latin Modern Mono', monospace;
+  }
+
+  /* Custom Academic Components */
+  .paper-section {
+    background: var(--gradient-paper);
+    box-shadow: var(--shadow-paper);
+    transition: var(--transition-academic);
+  }
+
+  .collaboration-badge {
+    box-shadow: var(--shadow-collaboration);
+    transition: var(--transition-smooth);
+  }
+
+  .collaboration-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elegant);
+  }
+}
